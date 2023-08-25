@@ -11,8 +11,8 @@ sys.path.insert(0, os.path.join(BASE_DIR, "apps"))
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-)l(ysg(p$0(&me0olb%el$k76&04y73=(xhxk5(ye^ig=+07my'
-# SECRET_KEY = 'ваш секретный ключ'
+
+SECRET_KEY = 'ваш секретный ключ'
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -98,27 +98,16 @@ WSGI_APPLICATION = 'qiqi.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
+ DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'YunaExe',
-        'USER': 'root',
-        'PASSWORD': '_a60037044B_',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
-    }
-}
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'НАЗВАНИЕ ВАШЕЙ БАЗЫ ДАННЫХ',
-#         'USER': 'ВАШЕ ИМЯ ПОЛЬЗОВАТЕЛЯ',
-#         'PASSWORD': 'ВАШ ПАРОЛЬ ОТ ПОЛЬЗОВАТЕЛЯ',
-#         'HOST': 'ХОСТ, ОБЫЧНО АЙПИ КАКОЕ-ТО',
-#         'PORT': 'ВАШ ПОРТ ОТ БАЗЫ ДАННЫХ',
-#     }
-# }
+         'ENGINE': 'django.db.backends.mysql',
+         'NAME': 'НАЗВАНИЕ ВАШЕЙ БАЗЫ ДАННЫХ',
+        'USER': 'ВАШЕ ИМЯ ПОЛЬЗОВАТЕЛЯ',
+         'PASSWORD': 'ВАШ ПАРОЛЬ ОТ ПОЛЬЗОВАТЕЛЯ',
+         'HOST': 'ХОСТ, ОБЫЧНО АЙПИ КАКОЕ-ТО',
+         'PORT': 'ВАШ ПОРТ ОТ БАЗЫ ДАННЫХ',
+     }
+ }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
