@@ -1,0 +1,33 @@
+{% load i18n %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'authStatic/css/auth.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital@0;1&family=REM&display=swap" rel="stylesheet">
+    <title>Авторизация</title>
+</head>
+<body>
+    <h1 style="font-size: 2rem;" align="center">Авторизируйся!!!</h1>
+    <div class="auth">
+        <h1>Добро пожаловать на сайт Qiqi!</h1>
+        <div class="authWelcome">
+            <p>Пожалуйста подключи свой discord аккаунт к сайту!!</p>
+           
+            <img class="img" width="400" src="{% static 'authStatic/img/qiqiAuth.png' %}" alt="">
+            <form action="" class="authorizeClass" method="post">
+                {% csrf_token %}
+                <button class="submitAuthButton" type="submit">Войти</button>
+            </form>
+        </div>
+    </div>
+    <hr>
+    <footer class="footer">
+        <p align="center">Natan Doyle</p>
+    </footer>
+</body>
+</html>

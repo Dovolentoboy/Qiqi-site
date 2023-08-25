@@ -1,0 +1,150 @@
+.sidebar{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+ul{
+list-style-type: none;
+padding: 0;
+margin: 0;
+}
+
+.sidebar ul li{
+margin-bottom: 10px;
+}
+
+h1{
+text-align: center;
+}
+
+.wrapper{
+display: flex;
+justify-content: center;
+align-items: center;
+margin-bottom: 10px;
+}
+
+.commands{
+background-color: white;
+color: black;
+padding: .5%;
+width: 40%;
+box-shadow: 4px 4px 4px 4px #adabab;
+margin-bottom: 1.5%;
+border-radius: 2px;
+}
+
+.commandsContent{
+display: flex;
+align-items: center;
+justify-content: space-between;
+margin: 0 3%;
+}
+
+.commandContentHeader{
+max-width: 70%;
+}
+
+.openInfo{
+background-color: white;
+border: 2px solid white;
+cursor: pointer;
+}
+
+.openInfo :hover{
+background-color: aqua;
+}
+
+.commandsHiddenContentContainer{
+max-width: 50%;
+margin: 0 3%;
+}
+
+.commandsHiddenDescription{
+box-shadow: 1px #adabab;
+}
+
+.commandsHiddenUse{
+background-color: #333;
+color: white;
+}
+
+.commandHiddenExample{
+background-color: #333;
+color: white;
+}
+
+.fordevelopers{
+margin-top: 2%;
+margin-left: 3%;
+}
+
+.deleteButton{
+background-color: red;
+cursor: pointer;
+display: inline-block;
+}
+
+.updateButton{
+background-color: aqua;
+cursor: pointer;
+display: inline-block;
+}
+
+.emptyBlock{
+background-color: white;
+color: black;
+max-width: 20%;
+height: 20%;
+text-align: center;
+border-radius: 2px;
+margin: 0 auto;
+}
+
+.emptyBlock p{
+font-size: 2rem;
+}
+
+.commit{
+display: inline-block;
+cursor: pointer;
+}
+
+.chooseCategory{
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    color: black;
+    padding: 1%;
+    max-width: 39%;
+    margin: 0 auto;
+    box-shadow: 4px 4px 4px 4px #adabab;
+    border-radius: 2px;
+    margin-bottom: 1%;
+}
+.selectmenu{
+    margin: 0 29%;
+    padding: 2% 10%;
+    border-radius: 10px;
+}
+.selectmenuItem{
+    border-radius: 10px;
+}
+.addCommandForm{
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    color: black;
+    padding: 1%;
+    max-width: 39%;
+    margin: 0 auto;
+    box-shadow: 4px 4px 4px 4px #adabab;
+    border-radius: 2px;
+    margin-bottom: 1%;
+}
+.addCommandFormItems{
+    margin: 0 15%;
+}

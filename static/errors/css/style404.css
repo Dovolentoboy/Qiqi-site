@@ -1,0 +1,69 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #333333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative; 
+}
+
+.image {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background: url(E:\qiqi-website\qiqi\static\errors\img\bg.jpg) 0 0 no-repeat;
+    background-size: cover;
+}
+
+.image:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color:rgba(0, 0, 0, .5);
+}
+
+.container {
+    position: relative;
+    margin: 15% auto;
+    max-width: 55%;
+    text-align: center;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+}
+
+.heading {
+    font-size: 2rem;
+    color: #e74c3c;
+    margin-bottom: 10px;
+}
+
+.message {
+    font-size: 1.2rem;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e74c3c;
+    color: #f3f4f6;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #b93e30;
+}

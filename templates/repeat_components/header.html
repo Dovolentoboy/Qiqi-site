@@ -1,0 +1,32 @@
+
+{% load static %}
+<header class="header">
+    <div class="logo">
+       <img width="118" height="95" src="{% static 'main/static_image/QiqiLogo.png' %}" alt=""> <a href="{% url 'main' %}"> <span> Qiqi</span></a>
+    </div>
+    <div class="container">
+        <nav class="menu">
+            <ul>
+                <select  class="selectLanguage" name="" style="display: block; height: 50px;" id="selectLanguage">
+                    <option value="">ВЫБЕРИТЕ ЯЗЫК</option>
+                    <option value="">Русский</option>
+                    <option value="">English</option>
+                    <option value="">Espanian</option>
+                </select>
+                <li class="menu__list"><a href="{% url 'commands' %}">Команды</a></li>
+                <li class="menu__list"><a href="{% url 'developers' %}">Разработчики</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="profile">
+
+        {% if discord_account %}
+        <a class="profile_link" href="/"><img src="{{avatar}}" width="50" alt=""> {{member.username}}</a>
+        {% else %}
+        <a class="profile_link" href="/"><img src="https://yt3.googleusercontent.com/6O40zlAc-70mYPkNH3JKppDH-tu3ryI_kljRJElWjshCdb_0sJ00ORiDmsLlckAhObEMv6rfAIo=s900-c-k-c0x00ffffff-no-rj" width="50" alt="Хуй"> {{user.username}}</a>
+        {% endif %}
+
+        <a href="{% url 'logout' %}">Выход</a>
+    </div>
+</header>
+

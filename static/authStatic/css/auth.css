@@ -1,0 +1,43 @@
+:root{
+    --darkText: #ffffff;
+    --darkBg: #333333;
+    --lightBg: #ffffff;
+    --lightText: #000000;
+
+    --authDarkBg: #dae3e1;
+    --authDarkText: #070808;
+}
+
+body, html{
+    font-family: 'Lato', sans-serif;
+    font-family: 'REM', sans-serif;
+    background-color: var(--darkBg);
+    color: var(--darkText);
+}
+.auth{
+    display: block;
+    text-align: center;
+    background-color: var(--authDarkBg);
+    color: var(--authDarkText);
+    max-width: 50%;
+    margin: 4% auto;
+}
+.submitAuthButton{
+    cursor: pointer;
+    background-color: rgb(64, 213, 64);
+    border-radius: 10px;
+    border: 0 ;
+    padding: 1% 6%;
+    margin-bottom: 3%;
+    color: rgb(255, 254, 254);
+}
+.submitAuthButton:hover{
+    color: rgb(129, 120, 120);
+    background-color: rgb(129, 247, 129);;
+}
+
+@media screen and (max-width: 819px ) {
+    .img{
+        display: none;
+    }
+}

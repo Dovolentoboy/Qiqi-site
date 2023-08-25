@@ -1,0 +1,165 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include 'repeat_components/links.html' %}
+    <link rel="stylesheet" href="{% static 'commands/css/commands.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Qiqi</title>
+</head>
+<body>
+    {% include 'repeat_components/header.html' %}
+    <hr>
+
+    <h1 align="center">Список команд Qiqi</h1>
+    <div class="chooseCategory">
+        <div class="selectMenuDiv">
+            <h1>Выбор категории команд</h1>
+            <select class="selectmenu" name="" id="select-category">
+                <option value="">Выбрать сортировку</option>
+                <option value="Покажи мне всё">Покажи мне всё</option>
+                {% for category in categories %}
+                <option class="selectmenuItem" value="{{ category.id }}">{{ category.category_name }}</option>
+                {% endfor %}
+            </select>
+    </div>
+    </div>
+    {% for command in commands %}
+    <div class="wrapper" id="app">
+        <div class="commands">
+            <div class="commandsContent">
+                <div class="commandContentHeader">
+                    <b>{{command.command_name}}</b> - <span>{{command.mini_description}}</span> 
+                </div>
+
+                <div class="hiddenCommandsContent">
+                    <button class="openInfo" id="openInfo{{command.id}}" onclick="showContent('{{command.id}}')">Развернуть</button>
+                </div>
+
+            </div>
+            
+            {% if user.is_staff %}
+            <div class="fordevelopers">
+
+                <button class="commit deleteButton"  id="deleteButton{{command.id}}" onclick="OpenDelete('{{command.id}}')" >
+                    <img src="https://cdn-icons-png.flaticon.com/512/1483/1483063.png" width="20" alt="">
+                </button>
+
+                <form id="deleteForm{{command.id}}" action="{% url 'commandsDelete' pk=command.id %}" style="display: none;"> 
+                    <p>Подтвердить удаление?</p>
+                    <button type="submit" style="cursor: pointer;" id="commit{{command.id}}">Да</button>
+                    <button onclick="closeDelete('{{command.id}}')" type="button" style="cursor: pointer;" id="cancel{{command.id}}">Нет</button>
+                </form>
+
+                <button onclick="openUpdate('{{command.id}}')" class="commit updateButton" id="updateButton{{command.id}}" >
+                    <img src="https://cdn-icons-png.flaticon.com/512/1839/1839198.png" width="20" alt="">
+                </button>
+                <hr id="line{{command.id}}" style="display: none;">
+                <div class="updateCommandForm" >
+                    
+                    <form id="updateForm{{command.id}}" method="post" style="display: none;" action="{% url 'commands_update' command_id=command.id %}">
+                        {% csrf_token %}
+                        <label for="">Название команды</label> <br>
+                        <input maxlength="50" type="text" name="command_name" value="{{ command.command_name }}"><br>
+                        <br>
+                        <label for="">Мини описание команды</label>  <br>
+                        <input type="text" name="mini_description" maxlength="100" value="{{ command.mini_description }}"> <br>
+                        <br>
+                        <label for="">Описание команды</label> <br>
+                        <input type="text" name="command_description" value="{{ command.command_description }}"> <br>
+                        <br>
+                        <label for="">Как использовать команду?</label> <br>
+                        <input type="text" name="command_use" value="{{ command.command_use }}"> <br>
+                        <br>
+                        <label for="">Пример использования команды</label> <br>
+                        <input type="text" name="command_example" value="{{ command.command_example }}"> <br>
+                        <br>
+                        <label for="">Выбери категорию</label> <br>
+                        <select name="command_category" id="">
+                            {% for category in categories %}
+                            <option value="{{ category.id }}" {% if category.id == command.command_category.id %}selected{% endif %}>{{ category.category_name }}</option>
+                            {% endfor %}
+                        </select><br>
+                        <button type="submit">Сохранить изменения</button>
+                    </form>
+                </div>
+
+            </div>
+            {% endif %}
+            <div class="commandsHiddenContent" id="hiddenContent{{command.id}}" style="display: none;">
+                <hr>
+                <div class="commandsHiddenContentContainer">
+
+                    <div class="commandsHiddenDescription">
+                        <p>{{command.command_description}}</p>
+                    </div>
+
+                    <div class="commandsHiddenUse">
+                        <p>{{command.command_use}}</p>
+                    </div>
+
+                    <div class="commandHiddenExample">
+                        <p>{{command.command_example}}</p>
+                    </div>
+                    {{command.created_at}}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <div class="emptyBlock">
+        <p>Весь контент закончился </p>
+    </div>
+    {% endfor %}
+
+   {% if user.is_staff %}
+    <div class="addCommandForm">
+        <form method="post">
+            {% csrf_token %}
+            <h1>Добавить команду</h1>
+            <div class="addCommandFormItems">
+                <label for="">Название команды</label> <br>
+                <input maxlength="50" type="text" name="command_name"> <br>
+                <br>
+                <label for="">Мини описание команды</label> <br>
+                <input type="text" name="mini_description" maxlength="100"> <br>
+                <br>
+                <label for="">Описание команды</label> <br>
+                <input type="text" name="command_description"> <br>
+                <br>
+                <label for="">Как использовать команду?</label> <br>
+                <input type="text" name="command_use"> <br>
+                <br>
+                <label for="">Пример использования команды</label> <br>
+                <input type="text" name="command_example"> <br>
+                <br>
+                <label for="">Выбери категорию</label>
+                <select name="command_category" id=""> 
+                    {% for category in categories %}
+                    <option value="{{ category.id }}">{{ category.category_name }}</option>
+                    {% endfor %}
+                </select> <br>
+                <button type="submit">Создать команду</button>
+        </div>
+        </form>
+    </div>
+    {% endif %}
+
+
+    
+    <hr>
+    <footer class="footer">
+        <p align="center">Natan Doyle</p>
+    </footer>
+
+
+    
+    <noscript>Включите пожалуйста JavaScript в настройках вашего браузера</noscript>
+
+    <script src="{% static 'commands/js/update.js' %}"></script>
+    <script src="{% static 'commands/js/category.js' %}"></script>
+    <script src="{% static 'commands/js/commit.js' %}"></script>
+    <script src="{% static 'commands/js/info.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+</body>
+</html>

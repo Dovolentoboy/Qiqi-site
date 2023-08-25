@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include 'repeat_components/links.html' %}
+    <title>Qiqi</title>
+</head>
+<body>
+    {% include 'repeat_components/header.html' %}
+    <div class="line"></div>
+    <main class="">
+        <div class="infoAboutDevelopers">
+            <div class="info">
+                <h1 align="center">Dovolen toboy</h1>
+                <p>Имя: Никита</p>
+                <p>Возраст: 15</p>
+                <p>День рождения: 22.11</p>
+                <p>Немного про Никиту: </p><br>
+                <p>Дед инсайд, который любит программировать, а также смотреть аниме. Короче скипайте его нахуй</p>
+
+                <h4 align="center">Любимый персонаж: Пауэр (человек-бензопила)</h4>
+                <div class="person">
+                    <img src="https://staticg.sportskeeda.com/editor/2022/12/c6127-16710949797839-1920.jpg" width="130" alt="">
+                 </div>
+               
+            </div>
+            <div align="center" class="center">
+                <img src="{% static 'main/static_image/qiqi.png' %}" alt="">
+            </div>
+            <div class="info">
+                <h1 align="center">Natan Doyle</h1>
+                <p align="center">Геншинфагер, фанокодер</p>
+            </div>
+        </div>
+    </main>
+    <div class="line"></div>
+    <footer class="footer">
+        <p align="center">Natan Doyle</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,219 @@
+body {
+    font-family: 'Lato', sans-serif;
+    font-family: 'REM', sans-serif;
+    background-color: #333;
+    color: white;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(69, 69, 119);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 1px 1px 1px 1px #adabab;
+}
+
+.container {
+    display: flex;
+    max-width: 90%;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    margin-left: 7%;
+}
+
+.logo a {
+    margin-top: 30px;
+    margin-left: 20px;
+    font-size: 1.9rem;
+    font-weight: bold;
+}
+
+.line {
+    background-color: #ccc;
+    height: 1px;
+}
+
+.menu ul {
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+    gap: 10%;
+    list-style: none;
+}
+
+.selectLanguage {
+    position: relative;
+    display: inline-block;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.profile_link{
+    display: flex;
+    margin-top: -20px;
+}
+
+.menu__list {
+    text-align: center;
+}
+.profile {
+    display: flex;
+    margin-right: 6%
+}
+.profile img{
+    margin-top: -15px;
+}
+.main{
+    margin: 10%;
+    display: flex;
+    max-width: 100%;
+}
+.main_container{
+    display: flex;
+    max-width: 100%;
+}
+.infoAboutQiqi{
+    margin: 5% 2%;
+    font-size: 2rem;
+}
+.button{
+    background-color: #0dd2e9;
+    border-radius: 0.5rem;
+    width: 1rem;    
+    height: 1rem;
+    margin-bottom: 10%;
+    margin-left: 10%;
+    border: 2px solid white;
+    color: black;
+}
+.infoAboutDevelopers{
+    display: flex;
+    justify-content: space-between;
+    margin: 5%;
+}
+.info{
+    background-color: rgb(12, 96, 124);
+    height: 500px;
+    width: 400px;
+}
+.info p {
+    margin-left: 2%;
+    font-weight: 600;
+}
+.info img{
+    text-align: center;
+}
+.person{
+    margin-left: 30%;
+}
+
+
+@media screen and (max-width: 600px) {
+    .header{
+        font-size: 0.5rem;
+    }
+    .qiqiart{
+        display: none;
+    }
+    a{
+        font-size: 0.7rem;
+    }
+    .container {
+        flex-direction: column;
+    }
+    .logo {
+        margin: 0;
+    }
+    .logo a {
+        margin: 20px;
+    }
+    .menu ul {
+        flex-direction: column;
+        gap: 20px;
+        font-size: 18px;
+    }
+    .profile_link {
+        margin-top: 0;
+    }
+    .profile {
+        margin-right: 0;
+    }
+    .main {
+        margin: 5%;
+    }
+    .infoAboutQiqi {
+        font-size: 1.6rem;
+    }
+    .button {
+        width: 1rem;
+        height: 0.8rem;
+        margin: 5% 0;
+    }
+}
+
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    a{
+        font-size: 0.8rem;
+    }
+    select{
+        font-size: 0.8rem;
+    }
+    .header{
+        font-size: 0.5rem;
+    }
+    .qiqiart{
+        display: none;
+    }
+    .container {
+        max-width: 80%;
+    }
+    .menu ul {
+        font-size: 20px;
+    }
+    .infoAboutQiqi {
+        font-size: 1.2rem;
+    }
+    .button {
+        width: 0.9rem;
+        height: 0.9rem;
+        margin-bottom: 8%;
+        margin-left: 8%;
+    }
+}
+
+
+@media screen and (min-width: 1025px) {
+    .container {
+        max-width: 90%;
+    }
+    .menu ul {
+        font-size: 24px;
+    }
+    .infoAboutQiqi {
+        font-size: 2rem;
+    }
+    .button {
+        font-size: 1rem;
+        width: 0.5rem;
+        height: 0.5rem;
+        margin-bottom: 10%;
+        margin-left: 10%;
+    }
+}

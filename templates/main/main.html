@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include 'repeat_components/links.html' %}
+    <title>Qiqi</title>
+</head>
+<body>
+   {% include 'repeat_components/header.html' %}
+    <div class="line">
+    </div>
+    <main class="main">
+        <div class="main_container">
+            <img class="qiqiart" src="{% static 'main/static_image/qiqiart.png' %}" alt="">
+            <div class="infoAboutQiqi">
+            <p>Меня зовут Qiqi - я многофункциональный бот, чьё призвание помогать серверам и их создателям. 
+                Надеюсь, что именно ты заинтересуешься в том, чтобы меня добавить в свой домик :3
+            </p>
+            <div class="linkButtons">
+                <a class="button" href="https://discord.gg/DGxff6DZZY">Сервер поддержка</a>
+                <a class="button" href="https://www.donationalerts.com/r/natandev" >Задонатить</a>
+                <a class="button" href="">Пустить в семью</a>
+            </div>
+        </div>
+        </div>
+    </main>
+    
+    <hr>
+    <footer class="footer">
+        <p align="center">Natan Doyle</p>
+    </footer>
+
+</body>
