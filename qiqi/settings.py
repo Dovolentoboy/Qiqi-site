@@ -57,9 +57,9 @@ SOCIALACCOUNT_PROVIDERS = {
         'SCOPE': ['identify', 'email', 'guilds'],
         'METHOD': 'oauth2',
         'VERIFIED_EMAIL': True,
-        'CLIENT_ID': '1036338672120909874',
-        'CLIENT_SECRET': 'X_SjiiLseNjHI69BiZm5lBOWwIjRMvie',
-        'REDIRECT_URI': 'http://127.0.0.1:8000/accounts/discord/login/callback/',
+        'CLIENT_ID': '',
+        'CLIENT_SECRET': '',
+        'REDIRECT_URI': '',
     }
 }
 
